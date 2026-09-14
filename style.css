@@ -16,6 +16,14 @@ body {
     color: #4a2c1a;
 }
 
+.card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
 h1 {
     margin-bottom: 20px;
     color: #8b4513;
@@ -27,13 +35,13 @@ p {
     font-size: 18px;
 }
 
-body > h1:first-of-type {
+.card h1:first-of-type {
     font-size: 42px;
     color: #c96b00;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-body > h1:not(:first-of-type) {
+.card h1:not(:first-of-type) {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 15px 30px;
     border-radius: 12px;
