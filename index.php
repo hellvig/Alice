@@ -23,7 +23,7 @@ $idade = "18";
 <p>
         Status:
         <?php if ($idade >=18): ?>
-            <strong style="color: green; ">Maior de idade</strong>
+            <strong style="color: green;">Maior de idade</strong>
         <?php else: ?>
             <strong style="color: red;">Menor de idade</strong>
         <?php endif; ?>
