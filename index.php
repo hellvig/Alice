@@ -13,16 +13,17 @@ $nome = "Alice";
 $idade = "18";
 ?>
 <h1> nome: <?= $nome ?> </h1>
-    <p> idade <?= $idade ?> </p>
+
+<p> idade <?= $idade ?> </p>
     
-    <p>
+<p>
         Status:
         <?php if ($idade >=18): ?>
             <strong style="color: pink; ">maior de idade</strong>
         <?php else: ?>
             <strong style="color: red;">menor de idade</strong>
         <?php endif; ?>
-        </p>
+</p>
 
 </body>
 </html>
