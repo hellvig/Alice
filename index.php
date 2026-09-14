@@ -9,19 +9,21 @@
 echo "<h1> I love pao de queijo </h1>";
 
 <?php
+echo "<h1> pao de queijo </h1>";
+
 $nome = "Alice";
 $idade = "18";
 ?>
-<h1> nome: <?= $nome ?> </h1>
 
+<h1> nome: <?= $nome ?> </h1>
 <p> idade <?= $idade ?> </p>
     
 <p>
         Status:
         <?php if ($idade >=18): ?>
-            <strong style="color: pink; ">maior de idade</strong>
+            <strong style="color: green; ">Maior de idade</strong>
         <?php else: ?>
-            <strong style="color: red;">menor de idade</strong>
+            <strong style="color: red;">Menor de idade</strong>
         <?php endif; ?>
 </p>
 
