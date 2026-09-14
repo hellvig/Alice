@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I love pao de queijo</title>
+    <linl rel = "stylesheet" href="style.css">
 </head>
 <body>
-echo "<h1> I love pao de queijo </h1>";
-
-<?php
+    <?php
 echo "<h1>I love pao de queijo</h1>";
-?>
-
-
 $nome = "Alice";
 $idade = "18";
 ?>
