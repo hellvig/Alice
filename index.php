@@ -7,6 +7,9 @@
     <linl rel = "stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="card">
+
     <?php
 echo "<h1>I love pao de queijo</h1>";
 $nome = "Alice";
@@ -24,6 +27,7 @@ $idade = "18";
             <strong style="color: red;">Menor de idade</strong>
         <?php endif; ?>
 </p>
+</div>
 
 </body>
 </html>
