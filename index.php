@@ -1,51 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>I love pão de queijo</title>
-
+    <title>Pão de Queijo</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="card">
+<div class="card">
+    <?php
+    echo "<h1> Pão de queijo </h1>";
 
-        <?php
-            echo "<h1>I love pao de queijo</h1>";
+    $nome = $_POST['nome'] ?? '';
+    $idade = $_POST['idade'] ?? null;
+    
+    
+    $resultado = ($nome !== '' && $idade !== null) ? "{$nome} - {$idade} anos" : '';
+    ?>
 
-            $nome = "Alice";
-            $idade = 18;
-        ?>
+    <form method="POST" action="">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($nome) ?>" required>
+        </div>
+        
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" value="<?= htmlspecialchars($idade ?? '') ?>" required>
+        </div>
 
-        <h1>Nome: <?= $nome ?></h1>
+        <div>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" value="<?= htmlspecialchars($resultado) ?>" readonly>
+        </div>
 
-        <p>Idade: <?= $idade ?></p>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+    
+    <?php if ($nome !== '' && $idade !== null): ?>
+        <h1>Nome: <?= ucfirst(htmlspecialchars($nome)) ?></h1>
+        <p>Idade: <?= (int)$idade ?></p>
 
         <p>
-            Status:
-
-            <?php if ($idade >= 18): ?>
-
-                <strong style="color: green;">
-                    Maior de idade
-                </strong>
-
+            Status: 
+            <?php if ((int)$idade >= 18): ?>
+                <strong style="color: green;">Maior de idade</strong>
             <?php else: ?>
-
-                <strong style="color: red;">
-                    Menor de idade
-                </strong>
-
+                <strong style="color: red;">Menor de idade</strong>
             <?php endif; ?>
-
         </p>
-
-    </div>
+    <?php endif; ?>
+    
+</div>
 
 </body>
-
 </html>
