@@ -57,9 +57,77 @@
 
     </form>
 
+
     <?php
 
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($GET["aluno"])) {
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["aluno"])) {
 
-        $aluno = $GET 
+        $aluno = $_GET["aluno"];
+        $idade = $_GET["idade"];
+
+        $n1 = $_GET["n1"];
+        $n2 = $_GET["n2"];
+        $n3 = $_GET["n3"];
+        $n4 = $_GET["n4"];
+        $n5 = $_GET["n5"];
+
+        $somaNotas = ($n1 * 2) + ($n2 * 3) + $n3 + $n4 + ($n5 * 3);
+
+        $mediaFinal = $somaNotas / 10;
+
+
+        if ($mediaFinal >= 7) {
+
+            $resultado = "APROVADO";
+            $classe = "aprovado";
+
+        } elseif ($mediaFinal >= 5) {
+
+            $resultado = "RECUPERAÇÃO";
+            $classe = "recuperacao";
+
+        } else {
+
+            $resultado = "REPROVADO";
+            $classe = "reprovado";
+
+        }
+
+    ?>
+
+        <div class="resultado">
+
+            <h2>Resultado do Aluno</h2>
+
+            <p>
+                <strong>Nome:</strong>
+                <?= htmlspecialchars($aluno) ?>
+            </p>
+
+            <p>
+                <strong>Idade:</strong>
+                <?= (int)$idade ?> anos
+            </p>
+
+            <p>
+                <strong>Média final:</strong>
+                <?= number_format($mediaFinal, 1, ',', '.') ?>
+            </p>
+
+            <p>
+                <strong>Situação:</strong>
+                <span class="<?= $classe ?>">
+                    <?= $resultado ?>
+                </span>
+            </p>
+
+        </div>
+
+    <?php
     }
+    ?>
+
+</div>
+
+</body>
+</html>
