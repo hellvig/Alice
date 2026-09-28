@@ -50,3 +50,33 @@
 
 </body>
 </html>
+
+<!--
+
+DIFERENÇA ENTRE GET E POST:
+
+POST:
+Quando testei com POST, os dados não apareceram na URL.
+A URL continuou assim:
+
+matheus315.devlook.xyz/login-basico.php
+
+
+GET:
+Quando testei com GET, os dados apareceram na URL.
+
+Exemplo:
+
+matheus315.devlook.xyz/login-basico.php?usuario=bahh&senha=pao_de_queijo
+
+
+Ou seja:
+
+GET envia os dados pela URL.
+
+POST envia os dados sem mostrar eles na URL.
+
+Por isso, para um formulário de login, o POST é mais adequado,
+pois o usuário e a senha não aparecem na URL.
+
+-->
