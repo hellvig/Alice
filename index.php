@@ -1,44 +1,49 @@
-<?php
-    require "conexao.php";
-
-    echo "<br>Meu sistema está conectado!";
-
-    $sql = "CREATE TABLE IF NOT EXISTS teste (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       nome VARCHAR(100),
-       idade INT
-    )";
-
-    $pdo->exec($sql);
-
-    echo "<br>Tabela criada com sucesso!"
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividades</title>
+
+    <title>Atividades PHP</title>
+
+    <link rel="stylesheet" href="style-index.css">
+
 </head>
 
 <body>
 
-    <a href="idade.php">Verificador de idade</a>
-    <br><br>
+    <div class="menu">
 
-    <a href="notas.php">Verificador de notas</a>
-    <br><br>
+        <h1>Minhas Atividades</h1>
 
-    <a href="notas-desafio.php">Desafio-notas</a>
-    <br><br>
+        <div class="links">
 
-    <a href="login-basico.php">Login básico</a>
-    <br><br>
+            <a href="idade.php">
+                Verificador de idade
+            </a>
 
-    <a href="jogos.php">jogos</a>
-    <br><br>
+            <a href="notas.php">
+                Verificador de notas
+            </a>
 
+            <a href="notas-desafio.php">
+                Desafio - notas
+            </a>
+
+            <a href="login-basico.php">
+                Login básico
+            </a>
+
+            <a href="jogos.php">
+                Cadastro de jogos
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
 
