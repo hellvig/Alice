@@ -23,7 +23,7 @@ $pdo->exec($sql);
     <title>Cadastro de jogos</title>
 
     <link rel="stylesheet"
-href="styles.css">
+href="style.css">
 
 </head>
 
