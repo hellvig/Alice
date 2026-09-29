@@ -36,6 +36,10 @@
     <a href="login-basico.php">Login básico</a>
     <br><br>
 
+    <a href="jogos.php">jogos</a>
+    <br><br>
+
+
 </body>
 
 </html>
