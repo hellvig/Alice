@@ -2,15 +2,13 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Atividades PHP</title>
 
-    <link rel="stylesheet" href="/css/style-index.css">
-
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -21,25 +19,25 @@
 
         <div class="links">
 
-            <a href="/projeto/idade.php">
+            <li><a href="/projeto/idade.php">
                 Verificador de idade
-            </a>
+            </a></li>
 
-            <a href="/projeto/notas.php">
+            <li><a href="/projeto/notas.php">
                 Verificador de notas
-            </a>
+            </a></li>
 
-            <a href="/projeto/notas-desafio.php">
+            <li><a href="/projeto/notas-desafio.php">
                 Desafio - notas
-            </a>
+            </a></li>
 
-            <a href="/projeto/login-basico.php">
+            <li><a href="/projeto/login-basico.php">
                 Login básico
-            </a>
+            </a></li>
 
-            <a href="/projeto/jogos.php">
+            <li><a href="/projeto/jogos.php">
                 Cadastro de jogos
-            </a>
+            </a></li>
 
         </div>
 
