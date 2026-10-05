@@ -21,23 +21,23 @@
 
         <div class="links">
 
-            <a href="/PROJETO/idade.php">
+            <a href="/projeto/idade.php">
                 Verificador de idade
             </a>
 
-            <a href="/PROJETO/notas.php">
+            <a href="/projeto/notas.php">
                 Verificador de notas
             </a>
 
-            <a href="/PROJETO/notas-desafio.php">
+            <a href="/projeto/notas-desafio.php">
                 Desafio - notas
             </a>
 
-            <a href="/PROJETO/login-basico.php">
+            <a href="/projeto/login-basico.php">
                 Login básico
             </a>
 
-            <a href="/PROJETO/jogos.php">
+            <a href="/projeto/jogos.php">
                 Cadastro de jogos
             </a>
 
