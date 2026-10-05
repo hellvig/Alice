@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio - Média do Aluno</title>
-    <link rel="stylesheet" href="notas_desafio.css">
+    <link rel="stylesheet" href="/css/notas_desafio.css">
 </head>
 
 <body>

@@ -9,7 +9,7 @@
 
     <title>Atividades PHP</title>
 
-    <link rel="stylesheet" href="style-index.css">
+    <link rel="stylesheet" href="/css/style-index.css">
 
 </head>
 
@@ -21,23 +21,23 @@
 
         <div class="links">
 
-            <a href="idade.php">
+            <a href="/PROJETO/idade.php">
                 Verificador de idade
             </a>
 
-            <a href="notas.php">
+            <a href="/PROJETO/notas.php">
                 Verificador de notas
             </a>
 
-            <a href="notas-desafio.php">
+            <a href="/PROJETO/notas-desafio.php">
                 Desafio - notas
             </a>
 
-            <a href="login-basico.php">
+            <a href="/PROJETO/login-basico.php">
                 Login básico
             </a>
 
-            <a href="jogos.php">
+            <a href="/PROJETO/jogos.php">
                 Cadastro de jogos
             </a>
 

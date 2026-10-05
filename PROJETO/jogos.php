@@ -22,7 +22,7 @@ $pdo->exec($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogos</title>
 
-    <link rel="stylesheet"href="jogos.css">
+    <link rel="stylesheet"href="/css/jogos.css">
 
 </head>
 
