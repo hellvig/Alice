@@ -68,7 +68,7 @@
              
         </div>
         <div class="projetos-container">
-            <!-- PROJETO 3 -->
+            <!-- PROJETO 2 -->
              <div class="projeto-numero">
                 01
              </div>
