@@ -199,6 +199,40 @@ header {
 
 .habilidade {
     background-color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
 
-    
+.habilidade:hover {
+    transform: translateY(-3px);
+}
+
+/* PROJETOS */
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(3, lfr);
+    gap: 25px;
+}
+
+.projeto-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projeto-numero {
+    font-size: 35px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 15px;
 }
