@@ -42,6 +42,7 @@
     <section class="conteudo-projeto">
         <h2>Cadastro de Jogos</h2>
     </section>
+    
 
     <!-- FIM DA ATIVIDADE -->
     <div class="voltar-projetos">
