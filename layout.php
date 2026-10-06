@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- CABEÇALHO -->
-     <header>
+    <header>
         <nav class="navbr">
             <h2 class="logo">
                 Meu Portfólio
@@ -22,6 +22,36 @@
                 </li>
             </ul>
         </nav>
-     </header>
+    </header>
+
+    <main class="pagina-projeto">
+
+    <section class="cabecalho-projeto">
+        <p class="projeto-projeto">
+            Projeto
+        </p>
+        <h1>
+            Cadastro de Jogos
+        </h1>
+        <p>
+            Atividade desenvolvida durante as aulas
+            de Desenvolvimento de Sistemas.
+        </p>
+    </section>
+
+    <section class="conteudo-projeto">
+        <h2>Cadastro de Jogos</h2>
+    </section>
+
+    <!-- FIM DA ATIVIDADE -->
+    <div class="voltar-projetos">
+        <a href="../index.php#projetos"> Voltar para projetos </a>
+    </div>
+</main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>Desenvolvido por <a href="matheus315.devlook.xyz"> hellvig </a> ° 2026 </p>
+    </footer>
 </body>
 </html>
