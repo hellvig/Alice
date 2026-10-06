@@ -1,6 +1,6 @@
 /* CONFIGURAÇÕES GERAIS */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
 }
 
 
-/*MENU */
+/* MENU */
 
 header {
     background-color: #111827;
@@ -30,12 +30,11 @@ header {
 .navbar {
     max-width: 1100px;
     margin: auto;
+    padding: 20px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 20px;
 }
 
 .logo {
@@ -45,7 +44,6 @@ header {
 .menu {
     display: flex;
     gap: 25px;
-
     list-style: none;
 }
 
@@ -60,12 +58,13 @@ header {
 }
 
 
-/* Ínicio */
+/* INÍCIO */
 
 .inicio {
     min-height: 85vh;
     display: flex;
     align-items: center;
+
     background-color: #111827;
     color: white;
 }
@@ -107,14 +106,16 @@ header {
     color: white;
 
     text-decoration: none;
-
     border-radius: 6px;
 
     font-weight: bold;
+
+    transition: 0.3s;
 }
 
-.botao :hover {
+.botao:hover {
     background-color: #1d4ed8;
+    transform: translateY(-2px);
 }
 
 
@@ -122,9 +123,7 @@ header {
 
 .secao {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 80px 20px;
 }
 
@@ -141,100 +140,40 @@ header {
 }
 
 
-/* SOBRE MIM */
-
-.sobre-conteudo {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-top: 40px;
-}
-
-.foto {
-    width: 200px;
-    height: 200px;
-    min-width: 200px;
-    border-radius: 50%;
-    background-color: #2563eb;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    font-weight: bold;
-}
-
-.sobre-texto h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.sobre-texto p {
-    margin-bottom: 15px;
-}
-
-
-/* SEÇÕES COM FUNDO DIFERENTE */
-
-.secao-destaque {
-    max-width: 100%;
-    background-color: #e5e7eb;
-}
-
-.secao-destaque > * {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* HABILIDADES */
-
-.lista-habilidades {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.habilidade {
-    background-color: white;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-}
-
-.habilidade:hover {
-    transform: translateY(-3px);
-}
-
-
-/* PROJETOS */
+/* CARDS DAS ATIVIDADES */
 
 .projetos-container {
     display: grid;
-    grid-template-columns: repeat(3, lfr);
+
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .projeto-card {
     background-color: white;
+
     padding: 30px;
+
     border-radius: 10px;
+
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+
     transition: 0.3s;
 }
 
 .projeto-card:hover {
     transform: translateY(-5px);
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .projeto-numero {
     font-size: 35px;
     font-weight: bold;
+
     color: #2563eb;
+
     margin-bottom: 15px;
 }
 
@@ -249,30 +188,37 @@ header {
 }
 
 
-/* TECNOLOGIAS UTILIZADAS */
+/* TECNOLOGIAS */
 
 .tecnologias {
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
+
     margin-bottom: 20px;
 }
 
 .tecnologias span {
     background-color: #dbeafe;
     color: #1e40af;
+
     padding: 5px 10px;
+
     border-radius: 5px;
+
     font-size: 13px;
     font-weight: bold;
 }
 
 
-/* LINK DO PROJETO */
+/* LINK DOS PROJETOS */
 
 .link-projeto {
     color: #2563eb;
+
     text-decoration: none;
+
     font-weight: bold;
 }
 
@@ -281,27 +227,57 @@ header {
 }
 
 
-/* CONTATO */
+/* SOBRE */
 
-.contato-container {
+.secao-destaque {
+    max-width: 100%;
+
+    background-color: #e5e7eb;
+}
+
+.secao-destaque > * {
+    max-width: 1100px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: 40px;
+}
+
+.foto {
+    width: 200px;
+    height: 200px;
+
+    min-width: 200px;
+
+    border-radius: 50%;
+
+    background-color: #2563eb;
+    color: white;
+
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    align-items: center;
+
+    font-size: 45px;
+    font-weight: bold;
 }
 
-.contato-item {
-    background-color: white;
-    width: 280px;
-    padding: 25px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.10);
+.sobre-texto h3 {
+    font-size: 25px;
+
+    margin-bottom: 15px;
 }
 
-.contato-item h3 {
-    color: #2563eb;
-    margin-bottom: 5px;
+.sobre-texto p {
+    margin-bottom: 15px;
 }
 
 
@@ -310,7 +286,9 @@ header {
 footer {
     background-color: #111827;
     color: #cccccc;
+
     text-align: center;
+
     padding: 30px;
 }
 
@@ -319,24 +297,16 @@ footer {
 
 @media (max-width: 800px) {
 
-    /* Menu */
-
     .navbar {
         flex-direction: column;
-
         gap: 15px;
     }
 
     .menu {
         flex-wrap: wrap;
-
         justify-content: center;
-
         gap: 15px;
     }
-
-
-    /* Início */
 
     .inicio {
         min-height: 70vh;
@@ -350,20 +320,13 @@ footer {
         font-size: 23px;
     }
 
-
-    /* Sobre */
+    .projetos-container {
+        grid-template-columns: 1fr;
+    }
 
     .sobre-conteudo {
         flex-direction: column;
-
         text-align: center;
-    }
-
-
-    /* Projetos */
-
-    .projetos-container {
-        grid-template-columns: 1fr;
     }
 
 }
