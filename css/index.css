@@ -17,7 +17,9 @@ body {
     line-height: 1.6;
 }
 
+
 /*MENU */
+
 header {
     background-color: #111827;
     position: sticky;
@@ -58,9 +60,7 @@ header {
 }
 
 
-/* =======================================
-  Ínicio
-  =====================================*/
+/* Ínicio */
 
 .inicio {
     min-height: 85vh;
@@ -140,9 +140,8 @@ header {
     margin-bottom: 40px;
 }
 
-/* ===================================
-    SOBRE MIM
-====================================== */
+
+/* SOBRE MIM */
 
 .sobre-conteudo {
     display: flex;
@@ -173,6 +172,7 @@ header {
 .sobre-texto p {
     margin-bottom: 15px;
 }
+
 
 /* SEÇÕES COM FUNDO DIFERENTE */
 
@@ -208,6 +208,7 @@ header {
 .habilidade:hover {
     transform: translateY(-3px);
 }
+
 
 /* PROJETOS */
 
@@ -265,6 +266,7 @@ header {
     font-size: 13px;
     font-weight: bold;
 }
+
 
 /* LINK DO PROJETO */
 
