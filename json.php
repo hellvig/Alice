@@ -61,8 +61,32 @@
         // SALVAR NO ARQUIVO
         file_put_contents($caminho, $jsonAtualizado);
     }
-    }
 
+    if ($acao === "deletar") {
+
+        // PEGAR O NOME QUE QUEREMOS DELETAR
+        $nome = $_POST["nome"];
+
+
+        // PERCORRER TODOS OS ALUNOS
+        foreach ($alunos as $posicao => $aluno) {
+
+            // VERIFICAR SE ENCONTROU O ALUNO
+            if ($aluno["nome"] === $nome) {
+
+                // DELETAR O ALUNO DO ARRAY
+                unset($alunos[$posicao]);
+            }
+
+        }
+        
+        // REORGANIZAR AS POSIÇÕES DO ARRAY
+        $alunos = array_values($alunos);
+
+
+
+        }
+    }
 
 ?>
 <!DOCTYPE html>
