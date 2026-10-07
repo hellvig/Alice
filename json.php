@@ -35,18 +35,33 @@
             file_put_contents($caminho, $jsonAtualizado);
          }
 
-    if ($acao === "cadastrar") {
+    if ($acao === "atualizar") {
 
+        // PEGAR OS DADOS DO FORMULÁRIO
+        $nome = $_POST["nome"];
+        $idade = $_POST["idade"];
+        $curso = $_POST["curso"];
 
+        // PERCORRER TODOS OS ALUNOS
+        foreach($alunos as $posicao => $aluno) {
+            if($aluno["nome"] == $nome) {
+                $aluno[$posicao]["idade"] = $novaIdade;
+                $aluno[$posicao]["curso"] = $novoCurso;
+                }
 
+            }
+        
 
+        // TRANSFORMAR ARRAY PHP EM JSON
+        $jsonAtualizado = json_encode(
+            $alunos,
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+        );
 
-
-
-
+        // SALVAR NO ARQUIVO
+        file_put_contents($caminho, $jsonAtualizado);
     }
-    
-}
+    }
 
 
 ?>
@@ -87,7 +102,27 @@
             <p>Idade: <?= $aluno["idade"] ?></p>
             <p>Curso: <?= $aluno["curso"] ?></p>
     <?php  } ?>
+
+    <h2>ATUALIZAR CADASTRO</h2>
+    <form method="POST">
+    <label>Nome:</label>
+        <input type="text" name="nome">
+        <label>Idade:</label>
+        <input type="number" name="idade">
+        <label>Curso:</label>
+        <input type="text" name="curso">
+        <button type="submit" name="acao" value="atualizar">Atualizar</button>
+    </form>
+
+
+    <h2>DELETAR CADASTRO</h2>
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+        <button type="submit" name="acao" value="deletar">Deletar</button>
+    </form>
 </body>
 
 </html>
 
+}
