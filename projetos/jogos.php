@@ -1,6 +1,6 @@
 <?php
 
-require "conexao.php";
+require "../conexao.php";
 
 // criação da tabela de jogos
 $sql = "CREATE TABLE IF NOT EXISTS jogos (
@@ -22,7 +22,7 @@ $pdo->exec($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de jogos</title>
 
-    <link rel="stylesheet"href="/CSS/jogos.css">
+    <link rel="stylesheet" href="../CSS/jogos.css">
 
 </head>
 
