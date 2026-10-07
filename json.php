@@ -1,34 +1,36 @@
 <?php
+{
+
     // 1. DECLARAR O CAMINHO DO ARQUIVO JSON
-    $caminho = __DIR__ . "/dados.json";
+            $caminho = __DIR__ . "/dados.json";
 
     // 2. ABRIR/LER O ARQUIVO JSON
-    $json = file_get_contents($caminho);
+            $json = file_get_contents($caminho);
 
     // 3. TRANSFORMAR JSON EM ARRAY PHP
-    $alunos = json_decode($json, true);
+            $alunos = json_decode($json, true);
 
+        if ($_SERVER["REQUEST_METHOD"] == "POST")
     // 4. CRIAR UM ALUNO
-    $novoAluno = [
-        "nome" => "Ali",
-        "idade" => 18,
-        "curso" => "Desenvolvimento de Sistemas"
-    ];
+            $novoAluno = [
+                "nome" => $_POST["nome"],
+                "idade" => $_POST["idade"],
+                "curso" => $_POST["curso"]
+        ];
 
     // 5. ADICIONAR O ALUNO NO ARRAY
-    $alunos[] = $novoAluno;
+            $alunos[] = $novoAluno;
 
     // 6. TRANSFORMAR ARRAY PHP EM JSON
-    $jsonAtualizado = json_encode($alunos,
-        JSON_PRETTY_PRINT |
-        JSON_UNESCAPED_UNICODE
-    );
+            $jsonAtualizado = json_encode($alunos,
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+        );
 
     // 7. SALVAR NO ARQUIVO
-    file_put_contents($caminho, 
-    $jsonAtualizado);
+            file_put_contents($caminho, $jsonAtualizado);
 
-    echo "DADOS REGISTRADOS EM dados.json";
+            echo "DADOS REGISTRADOS EM dados.json";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +41,23 @@
     initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+        <label>Idade:</label>
+        <input type="number" name="idade">
+        <label>Curso:</label>
+        <input type="text" name="curso">
+        <button type="submit">Cadastrar</button>
+    </form>
+
+
+
+
     
 </body>
+
 </html>
 
