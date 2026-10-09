@@ -1,3 +1,6 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,133 +8,100 @@
 }
 
 body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #f4eedf);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: linear-gradient(135deg, #fff3d6, #f8d49d);
-
-    color: #4a2c1a;
-
-    padding: 30px;
+    padding: 40px 20px;
+    color: #332d21;
 }
+
+/* CARD */
 
 .card {
-    width: 100%;
-    max-width: 500px;
-
-    padding: 30px;
-
-    background: rgba(255, 255, 255, 0.6);
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-
-    text-align: center;
+    background: white;
+    max-width: 550px;
+    margin: auto;
+    padding: 40px;
+    border: 2px solid #d4af37;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(150, 120, 50, 0.15);
 }
+
+/* TÍTULO */
 
 h1 {
-    margin-bottom: 25px;
-
-    color: #c96b00;
-
-    font-size: 36px;
-
     text-align: center;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    color: #9b792f;
+    font-family: Georgia, serif;
+    margin-bottom: 30px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+/* FORMULÁRIO */
 
 form div {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    margin-bottom: 18px;
 }
 
 label {
-    margin-bottom: 5px;
-
-    font-size: 16px;
+    display: block;
+    margin-bottom: 7px;
+    color: #80652c;
     font-weight: bold;
-
-    color: #8b4513;
 }
 
 input {
     width: 100%;
-
-    padding: 10px;
-
-    border: 2px solid #f0c27b;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
-    outline: none;
+    padding: 12px;
+    border: 1px solid #d9c89f;
+    border-radius: 6px;
+    background: #fffdf7;
 }
 
 input:focus {
-    border-color: #c96b00;
+    outline: none;
+    border-color: #b89646;
 }
 
+/* BOTÃO */
+
 button {
-    margin-top: 10px;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background-color: #c96b00;
-
+    width: 100%;
+    padding: 14px;
+    background: #b89646;
     color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #a95600;
+    background: #8d6d2e;
+    transform: translateY(-3px);
 }
 
+/* RESULTADO */
+
 .resultado {
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background-color: rgba(255, 255, 255, 0.7);
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fffaf0;
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px solid #d9c89f;
+    border-radius: 8px;
 }
 
 .resultado h2 {
-    margin-bottom: 15px;
-
-    color: #8b4513;
+    text-align: center;
+    color: #9b792f;
+    margin-bottom: 20px;
 }
 
 .resultado p {
-    margin: 10px 0;
-
-    font-size: 18px;
+    margin-bottom: 12px;
 }
+
+/* SITUAÇÃO DO ALUNO */
 
 .aprovado {
     color: green;
@@ -139,13 +109,17 @@ button:hover {
 }
 
 .recuperacao {
-    color: #d98200;
+    color: #b8860b;
     font-weight: bold;
 }
 
 .reprovado {
-    color: red;
+    color: #b22222;
     font-weight: bold;
 }
 
-/* testando sitezin*/
+@media (max-width: 600px) {
+    .card {
+        padding: 25px;
+    }
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,17 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Atividades PHP</title>
+    <title>Atividades PHP - Hellvig</title>
 
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 
+    <!-- MENU -->
+
     <header>
         <nav class="navbar">
 
-            <h2 class="logo">Hellvig</h2>
+            <h2 class="logo">✦ Hellvig</h2>
 
             <ul class="menu">
                 <li><a href="#inicio">Início</a></li>
@@ -33,19 +36,20 @@
 
         <div class="inicio-conteudo">
 
-            <p class="saudacao">Bem-vindo!</p>
+            <p class="saudacao">✦ BEM-VINDO AO MEU PORTFÓLIO ✦</p>
 
-            <h1>Atividades PHP</h1>
+            <h1>Atividades <span>PHP</span></h1>
 
             <h2>Desenvolvimento Web</h2>
 
-            <p>
-                Página criada para organizar e acessar as atividades
-                desenvolvidas durante as aulas de PHP.
+            <p class="descricao">
+                Página criada para organizar e acessar as
+                atividades desenvolvidas durante as aulas
+                de PHP.
             </p>
 
             <a href="#atividades" class="botao">
-                Ver atividades
+                Ver atividades ↓
             </a>
 
         </div>
@@ -56,6 +60,8 @@
     <!-- ATIVIDADES -->
 
     <section class="secao" id="atividades">
+
+        <p class="detalhe-secao">✧ MEUS PROJETOS ✧</p>
 
         <h2 class="titulo-secao">Minhas Atividades</h2>
 
@@ -190,7 +196,7 @@
                     <span>CSS</span>
                 </div>
 
-                <a href="projetos/jogos.php" class="link-projetos">
+                <a href="projetos/jogos.php" class="link-projeto">
                     Abrir atividade →
                 </a>
 
@@ -206,6 +212,8 @@
 
     <section class="secao secao-destaque" id="sobre">
 
+        <p class="detalhe-secao">✧ CONHECIMENTO ✧</p>
+
         <h2 class="titulo-secao">Sobre o Projeto</h2>
 
         <p class="subtitulo-secao">
@@ -215,7 +223,8 @@
         <div class="sobre-conteudo">
 
             <div class="foto">
-                PHP
+                ✦
+                <span>PHP</span>
             </div>
 
             <div class="sobre-texto">
@@ -244,9 +253,13 @@
 
     <footer>
 
+        <div class="simbolo-rodape">✦</div>
+
         <p>
             Atividades PHP - Desenvolvimento Web
         </p>
+
+        <small>Hellvig • Portfólio de Projetos</small>
 
     </footer>
 
