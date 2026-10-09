@@ -1,4 +1,3 @@
-/* CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* TÍTULO PRINCIPAL */
 h1 {
     background-color: #1e40af;
     color: white;
@@ -40,7 +38,6 @@ h4 {
     color: #334155;
 }
 
-/* FORMULÁRIOS */
 form {
     background-color: white;
     padding: 25px;
@@ -81,7 +78,6 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* BOTÕES */
 button {
     border: none;
     padding: 12px 20px;
@@ -118,7 +114,6 @@ button[name="acao"][value="excluir"]:hover {
     background-color: #b91c1c;
 }
 
-/* RELATÓRIO */
 body > p {
     margin-bottom: 10px;
 }
@@ -127,7 +122,6 @@ h2 + p {
     margin-top: 10px;
 }
 
-/* LISTAGEM DE CHAMADOS */
 hr {
     border: none;
     border-top: 1px solid #cbd5e1;

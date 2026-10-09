@@ -1,9 +1,6 @@
 <?php
 
-// 1. DECLARAR O CAMINHO DO ARQUIVO JSON
 $caminho = __DIR__ . "/chamados.json";
-
-// 2. CRIAR AS FUNÇÕES
 
 function consultarChamados() {
     global $caminho;
@@ -30,16 +27,13 @@ function salvarChamados($chamados) {
         JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
     );
 
-    // SALVAR NO ARQUIVO
     file_put_contents($caminho, $jsonAtualizado);
 }
 
 function cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade) {
 
-    // CONSULTAR OS CHAMADOS EXISTENTES
     $chamados = consultarChamados();
 
-    // CRIAR UM NOVO CHAMADO
     $novoChamado = [
         "nome" => $nome,
         "setor" => $setor,
@@ -49,19 +43,15 @@ function cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade) 
         "status" => "Aberto"
     ];
 
-    // ADICIONAR O CHAMADO NO ARRAY
     $chamados[] = $novoChamado;
 
-    // SALVAR OS DADOS
     salvarChamados($chamados);
 }
 
 function atualizarChamado($posicao, $novoStatus) {
 
-    // CONSULTAR OS CHAMADOS EXISTENTES
     $chamados = consultarChamados();
 
-    // VALIDAR OS STATUS PERMITIDOS
     $statusPermitidos = [
         "Aberto",
         "Em andamento",
@@ -72,10 +62,8 @@ function atualizarChamado($posicao, $novoStatus) {
         isset($chamados[$posicao]) &&
         in_array($novoStatus, $statusPermitidos)
     ) {
-        // ATUALIZAR O STATUS
         $chamados[$posicao]["status"] = $novoStatus;
 
-        // SALVAR OS DADOS
         salvarChamados($chamados);
 
         return true;
@@ -86,18 +74,14 @@ function atualizarChamado($posicao, $novoStatus) {
 
 function excluirChamado($posicao) {
 
-    // CONSULTAR OS CHAMADOS EXISTENTES
     $chamados = consultarChamados();
 
     if (isset($chamados[$posicao])) {
 
-        // EXCLUIR O CHAMADO
         unset($chamados[$posicao]);
 
-        // REORGANIZAR AS POSIÇÕES DO ARRAY
         $chamados = array_values($chamados);
 
-        // SALVAR OS DADOS
         salvarChamados($chamados);
 
         return true;
@@ -108,16 +92,13 @@ function excluirChamado($posicao) {
 
 function gerarRelatorio() {
 
-    // CONSULTAR OS CHAMADOS EXISTENTES
     $chamados = consultarChamados();
 
-    // INICIALIZAR AS CONTAGENS
     $total = count($chamados);
     $abertos = 0;
     $andamento = 0;
     $resolvidos = 0;
 
-    // PERCORRER TODOS OS CHAMADOS
     foreach ($chamados as $chamado) {
 
         if ($chamado["status"] == "Aberto") {
@@ -133,7 +114,6 @@ function gerarRelatorio() {
         }
     }
 
-    // RETORNAR OS RESULTADOS
     return [
         "total" => $total,
         "abertos" => $abertos,
