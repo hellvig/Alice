@@ -29,8 +29,8 @@
 
         <?php
 
-        $usuario_certo = "bahh";
-        $senha_certa = "pao_de_queijo";
+        $usuario_certo = "admin";
+        $senha_certa = "12345";
 
         if (isset($_POST["usuario"])) {
 
