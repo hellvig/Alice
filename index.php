@@ -13,12 +13,12 @@
 
 <body>
 
-    <!-- MENU -->
+    <!-- MENU PRINCIPAL -->
 
     <header>
         <nav class="navbar">
 
-            <h2 class="logo">✦ Hellvig</h2>
+            <h2 class="logo">Pão de Queijo</h2>
 
             <ul class="menu">
                 <li><a href="#inicio">Início</a></li>
@@ -36,20 +36,63 @@
 
         <div class="inicio-conteudo">
 
-            <p class="saudacao">✦ BEM-VINDO AO MEU PORTFÓLIO ✦</p>
+            <p class="saudacao">DESENVOLVIMENTO WEB</p>
 
-            <h1>Atividades <span>PHP</span></h1>
-
-            <h2>Desenvolvimento Web</h2>
+            <h1>Meu Portfólio PHP</h1>
 
             <p class="descricao">
-                Página criada para organizar e acessar as
-                atividades desenvolvidas durante as aulas
-                de PHP.
+                Atividades desenvolvidas durante as aulas
+                de programação e desenvolvimento web.
             </p>
 
+
+            <!-- CÍRCULO PHP COM ASAS -->
+
+            <div class="foto-com-asas">
+
+                <!-- ASA ESQUERDA -->
+
+                <div class="asa asa-esquerda">
+
+                    <div class="pena pena1"></div>
+                    <div class="pena pena2"></div>
+                    <div class="pena pena3"></div>
+                    <div class="pena pena4"></div>
+                    <div class="pena pena5"></div>
+                    <div class="pena pena6"></div>
+                    <div class="pena pena7"></div>
+                    <div class="pena pena8"></div>
+
+                </div>
+
+
+                <!-- CÍRCULO CENTRAL -->
+
+                <div class="foto">
+                    <span>PHP</span>
+                </div>
+
+
+                <!-- ASA DIREITA -->
+
+                <div class="asa asa-direita">
+
+                    <div class="pena pena1"></div>
+                    <div class="pena pena2"></div>
+                    <div class="pena pena3"></div>
+                    <div class="pena pena4"></div>
+                    <div class="pena pena5"></div>
+                    <div class="pena pena6"></div>
+                    <div class="pena pena7"></div>
+                    <div class="pena pena8"></div>
+
+                </div>
+
+            </div>
+
+
             <a href="#atividades" class="botao">
-                Ver atividades ↓
+                Explorar atividades
             </a>
 
         </div>
@@ -61,7 +104,7 @@
 
     <section class="secao" id="atividades">
 
-        <p class="detalhe-secao">✧ MEUS PROJETOS ✧</p>
+        <p class="detalhe-secao">MEUS PROJETOS</p>
 
         <h2 class="titulo-secao">Minhas Atividades</h2>
 
@@ -82,15 +125,9 @@
                 <h3>Verificador de Idade</h3>
 
                 <p>
-                    Sistema desenvolvido em PHP para receber
-                    nome e idade do usuário.
+                    Sistema para receber nome e idade
+                    e verificar a situação do usuário.
                 </p>
-
-                <div class="tecnologias">
-                    <span>HTML</span>
-                    <span>PHP</span>
-                    <span>CSS</span>
-                </div>
 
                 <a href="projetos/idade.php" class="link-projeto">
                     Abrir atividade →
@@ -108,15 +145,9 @@
                 <h3>Verificador de Notas</h3>
 
                 <p>
-                    Sistema para inserir notas e verificar
-                    a situação do aluno.
+                    Sistema para calcular a média
+                    e verificar a situação do aluno.
                 </p>
-
-                <div class="tecnologias">
-                    <span>HTML</span>
-                    <span>PHP</span>
-                    <span>CSS</span>
-                </div>
 
                 <a href="projetos/notas.php" class="link-projeto">
                     Abrir atividade →
@@ -134,15 +165,9 @@
                 <h3>Desafio de Notas</h3>
 
                 <p>
-                    Versão mais completa do sistema de notas,
-                    utilizando pesos e média final.
+                    Calculadora de média utilizando
+                    cinco notas com pesos diferentes.
                 </p>
-
-                <div class="tecnologias">
-                    <span>HTML</span>
-                    <span>PHP</span>
-                    <span>CSS</span>
-                </div>
 
                 <a href="projetos/notas-desafio.php" class="link-projeto">
                     Abrir atividade →
@@ -160,15 +185,9 @@
                 <h3>Login Básico</h3>
 
                 <p>
-                    Página de autenticação simples utilizando
-                    formulário e PHP.
+                    Formulário de autenticação
+                    desenvolvido com HTML e PHP.
                 </p>
-
-                <div class="tecnologias">
-                    <span>HTML</span>
-                    <span>PHP</span>
-                    <span>CSS</span>
-                </div>
 
                 <a href="projetos/login-basico.php" class="link-projeto">
                     Abrir atividade →
@@ -186,22 +205,15 @@
                 <h3>Cadastro de Jogos</h3>
 
                 <p>
-                    Sistema para cadastrar e visualizar
-                    informações sobre jogos.
+                    Cadastro de jogos utilizando
+                    PHP e banco de dados.
                 </p>
-
-                <div class="tecnologias">
-                    <span>HTML</span>
-                    <span>PHP</span>
-                    <span>CSS</span>
-                </div>
 
                 <a href="projetos/jogos.php" class="link-projeto">
                     Abrir atividade →
                 </a>
 
             </div>
-
 
         </div>
 
@@ -212,37 +224,24 @@
 
     <section class="secao secao-destaque" id="sobre">
 
-        <p class="detalhe-secao">✧ CONHECIMENTO ✧</p>
+        <p class="detalhe-secao">CONHECIMENTO</p>
 
         <h2 class="titulo-secao">Sobre o Projeto</h2>
 
-        <p class="subtitulo-secao">
-            Um pouco sobre esta página.
-        </p>
-
         <div class="sobre-conteudo">
 
-            <div class="foto">
-                ✦
-                <span>PHP</span>
-            </div>
+            <h3>Desenvolvimento Web</h3>
 
-            <div class="sobre-texto">
+            <p>
+                Este portfólio reúne as atividades
+                desenvolvidas durante as aulas de PHP.
+            </p>
 
-                <h3>Projeto de Desenvolvimento Web</h3>
-
-                <p>
-                    Esta página reúne as atividades realizadas
-                    durante as aulas de desenvolvimento web.
-                </p>
-
-                <p>
-                    Os exercícios utilizam HTML, CSS e PHP para
-                    praticar formulários, cálculos, condições,
-                    login e conexão com banco de dados.
-                </p>
-
-            </div>
+            <p>
+                Os exercícios utilizam HTML, CSS e PHP
+                para praticar formulários, cálculos,
+                condições, login e banco de dados.
+            </p>
 
         </div>
 
@@ -253,16 +252,11 @@
 
     <footer>
 
-        <div class="simbolo-rodape">✦</div>
+        <p>Atividades PHP - Desenvolvimento Web</p>
 
-        <p>
-            Atividades PHP - Desenvolvimento Web
-        </p>
-
-        <small>Hellvig • Portfólio de Projetos</small>
+        <small>Hellvig - Portfólio de Projetos</small>
 
     </footer>
 
 </body>
-
 </html>

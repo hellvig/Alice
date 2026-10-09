@@ -1,5 +1,7 @@
 
-/* CONFIGURAÇÕES GERAIS */
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
 
 * {
     margin: 0;
@@ -13,27 +15,28 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #faf8f1;
-    color: #332d21;
-    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    background: #faf7ef;
+    color: #55401e;
+    overflow-x: hidden;
 }
 
-/* MENU */
+/* =====================================
+   MENU PRINCIPAL
+===================================== */
 
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background: #fffaf0;
+    border-bottom: 2px solid #d4af37;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #e4d5af;
-    box-shadow: 0 3px 15px rgba(150, 120, 50, 0.08);
 }
 
 .navbar {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 20px 30px;
 
     display: flex;
     justify-content: space-between;
@@ -41,162 +44,424 @@ header {
 }
 
 .logo {
-    color: #9b792f;
     font-family: Georgia, serif;
-    font-size: 28px;
+    font-size: 30px;
+    color: #9b792f;
 }
 
 .menu {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
 }
 
 .menu a {
-    color: #594a2f;
     text-decoration: none;
+    color: #9b792f;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #b89646;
+    color: #d4af37;
 }
 
-/* INÍCIO */
+/* =====================================
+   INÍCIO
+===================================== */
 
 .inicio {
     min-height: 85vh;
+    padding: 65px 20px 90px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     text-align: center;
+    position: relative;
+    overflow: hidden;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(230, 207, 149, 0.35),
-            transparent 60%
-        ),
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #f4eedf,
-            #ffffff
+            #fff9e8 0%,
+            #f8f0df 45%,
+            #ffffff 100%
         );
-
-    border-bottom: 1px solid #e4d5af;
-    position: relative;
-    overflow: hidden;
 }
 
-/* DETALHES DE ARQUITETURA */
+/* NUVENS DECORATIVAS */
 
 .inicio::before,
 .inicio::after {
     content: "";
     position: absolute;
-    top: 12%;
-    bottom: 12%;
-    width: 55px;
+    bottom: -85px;
 
-    background: repeating-linear-gradient(
-        90deg,
-        #f1ead8,
-        #ffffff 10px,
-        #e9dfc6 20px
-    );
+    width: 420px;
+    height: 210px;
 
-    border-left: 2px solid #d4bd84;
-    border-right: 2px solid #d4bd84;
-    opacity: 0.55;
+    background: #ffffff;
+    border-radius: 50%;
+
+    opacity: 0.8;
+    filter: blur(35px);
 }
 
 .inicio::before {
-    left: 4%;
+    left: -110px;
 }
 
 .inicio::after {
-    right: 4%;
+    right: -110px;
 }
 
 .inicio-conteudo {
-    max-width: 850px;
-    padding: 80px 25px;
     position: relative;
-    z-index: 1;
-    animation: aparecer 1s ease;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
 }
 
 .saudacao {
-    color: #9b792f;
+    color: #b08a3e;
     font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
 .inicio h1 {
     font-family: Georgia, serif;
-    font-size: 65px;
-    color: #332d21;
-    margin-bottom: 10px;
-}
-
-.inicio h1 span {
-    color: #b89646;
-}
-
-.inicio h2 {
-    font-family: Georgia, serif;
-    font-size: 28px;
+    font-size: 48px;
     color: #9b792f;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .descricao {
-    max-width: 600px;
-    margin: auto;
-    color: #706959;
+    color: #756d5c;
     font-size: 16px;
+    max-width: 580px;
+    margin: auto;
+    line-height: 1.8;
 }
 
-/* BOTÃO PRINCIPAL */
+/* =====================================
+   CÍRCULO PHP COM ASAS
+===================================== */
+
+.foto-com-asas {
+    width: 600px;
+    height: 340px;
+
+    margin: 35px auto 20px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: voar 5s ease-in-out infinite;
+}
+
+/* CÍRCULO CENTRAL */
+
+.foto {
+    position: relative;
+    z-index: 5;
+
+    width: 245px;
+    height: 245px;
+
+    border-radius: 50%;
+    border: 3px solid #d4af37;
+
+    background: radial-gradient(
+        circle,
+        #fffefa,
+        #f7edd5
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 0 35px rgba(212, 175, 55, 0.22),
+        0 15px 35px rgba(150, 120, 50, 0.12);
+}
+
+.foto span {
+    font-family: Georgia, serif;
+    font-size: 56px;
+    font-weight: bold;
+    color: #9b792f;
+}
+
+/* =====================================
+   ASAS ANGELICAIS
+===================================== */
+
+.asa {
+    position: absolute;
+    top: 42px;
+
+    width: 210px;
+    height: 245px;
+
+    z-index: 2;
+}
+
+/* ASA ESQUERDA */
+
+.asa-esquerda {
+    left: 10px;
+    transform-origin: right center;
+    animation: bater-esquerda 5s ease-in-out infinite;
+}
+
+/* ASA DIREITA */
+
+.asa-direita {
+    right: 10px;
+    transform-origin: left center;
+    animation: bater-direita 5s ease-in-out infinite;
+}
+
+/* PENAS */
+
+.pena {
+    position: absolute;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 10%,
+        #fffdf6 55%,
+        #f1dfb2 100%
+    );
+
+    border: 2px solid #d4af37;
+
+    border-radius: 85% 15% 85% 15%;
+
+    box-shadow: 0 4px 12px rgba(150, 120, 50, 0.10);
+}
+
+/* PENAS DA ASA ESQUERDA */
+
+.asa-esquerda .pena1 {
+    width: 145px;
+    height: 43px;
+    top: 12px;
+    left: 35px;
+    transform: rotate(45deg);
+}
+
+.asa-esquerda .pena2 {
+    width: 165px;
+    height: 44px;
+    top: 35px;
+    left: 18px;
+    transform: rotate(35deg);
+}
+
+.asa-esquerda .pena3 {
+    width: 180px;
+    height: 45px;
+    top: 65px;
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.asa-esquerda .pena4 {
+    width: 180px;
+    height: 45px;
+    top: 95px;
+    left: 5px;
+    transform: rotate(12deg);
+}
+
+.asa-esquerda .pena5 {
+    width: 165px;
+    height: 43px;
+    top: 125px;
+    left: 18px;
+    transform: rotate(0deg);
+}
+
+.asa-esquerda .pena6 {
+    width: 145px;
+    height: 40px;
+    top: 155px;
+    left: 38px;
+    transform: rotate(-15deg);
+}
+
+.asa-esquerda .pena7 {
+    width: 120px;
+    height: 37px;
+    top: 180px;
+    left: 62px;
+    transform: rotate(-25deg);
+}
+
+.asa-esquerda .pena8 {
+    width: 95px;
+    height: 33px;
+    top: 205px;
+    left: 85px;
+    transform: rotate(-35deg);
+}
+
+/* PENAS DA ASA DIREITA */
+
+.asa-direita .pena1 {
+    width: 145px;
+    height: 43px;
+    top: 12px;
+    right: 35px;
+    transform: scaleX(-1) rotate(45deg);
+}
+
+.asa-direita .pena2 {
+    width: 165px;
+    height: 44px;
+    top: 35px;
+    right: 18px;
+    transform: scaleX(-1) rotate(35deg);
+}
+
+.asa-direita .pena3 {
+    width: 180px;
+    height: 45px;
+    top: 65px;
+    right: 0;
+    transform: scaleX(-1) rotate(25deg);
+}
+
+.asa-direita .pena4 {
+    width: 180px;
+    height: 45px;
+    top: 95px;
+    right: 5px;
+    transform: scaleX(-1) rotate(12deg);
+}
+
+.asa-direita .pena5 {
+    width: 165px;
+    height: 43px;
+    top: 125px;
+    right: 18px;
+    transform: scaleX(-1);
+}
+
+.asa-direita .pena6 {
+    width: 145px;
+    height: 40px;
+    top: 155px;
+    right: 38px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+.asa-direita .pena7 {
+    width: 120px;
+    height: 37px;
+    top: 180px;
+    right: 62px;
+    transform: scaleX(-1) rotate(-25deg);
+}
+
+.asa-direita .pena8 {
+    width: 95px;
+    height: 33px;
+    top: 205px;
+    right: 85px;
+    transform: scaleX(-1) rotate(-35deg);
+}
+
+/* =====================================
+   ANIMAÇÕES
+===================================== */
+
+/* FLUTUAÇÃO DO CONJUNTO */
+
+@keyframes voar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* MOVIMENTO DA ASA ESQUERDA */
+
+@keyframes bater-esquerda {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+}
+
+/* MOVIMENTO DA ASA DIREITA */
+
+@keyframes bater-direita {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+/* =====================================
+   BOTÃO PRINCIPAL
+===================================== */
 
 .botao {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 14px 30px;
 
-    background-color: #b89646;
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #9b792f
+    );
+
     color: white;
-
     text-decoration: none;
-    border-radius: 6px;
     font-weight: bold;
+    border-radius: 8px;
 
-    box-shadow: 0 5px 15px rgba(150, 120, 50, 0.2);
     transition: 0.3s;
 }
 
 .botao:hover {
-    background-color: #8d6d2e;
     transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(150, 120, 50, 0.25);
 }
 
-/* SEÇÕES */
+/* =====================================
+   SEÇÕES
+===================================== */
 
 .secao {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 85px 20px;
+    padding: 85px 25px;
 }
 
 .detalhe-secao {
     text-align: center;
-    color: #b89646;
+    color: #b08a3e;
     font-size: 13px;
-    font-weight: bold;
     letter-spacing: 3px;
     margin-bottom: 10px;
 }
@@ -204,9 +469,9 @@ header {
 .titulo-secao {
     font-family: Georgia, serif;
     font-size: 38px;
+    color: #9b792f;
     text-align: center;
-    color: #8d6d2e;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .subtitulo-secao {
@@ -215,181 +480,131 @@ header {
     margin-bottom: 45px;
 }
 
-/* CARDS DAS ATIVIDADES */
+/* =====================================
+   CARTÕES DAS ATIVIDADES
+===================================== */
 
 .projetos-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
 }
 
 .projeto-card {
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #fffdf7
-        );
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #fffaf0
+    );
 
-    padding: 30px;
-    border: 1px solid #e4d5af;
-    border-top: 3px solid #d4af37;
-    border-radius: 10px;
+    padding: 25px 18px;
 
-    box-shadow: 0 5px 20px rgba(150, 120, 50, 0.09);
+    border: 1px solid #d4af37;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(150, 120, 50, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
     transition: 0.3s;
 }
 
 .projeto-card:hover {
     transform: translateY(-8px);
-    border-color: #b89646;
-    box-shadow: 0 12px 30px rgba(150, 120, 50, 0.18);
+    box-shadow: 0 15px 30px rgba(150, 120, 50, 0.18);
 }
 
 .projeto-numero {
     font-family: Georgia, serif;
-    font-size: 36px;
-    font-weight: bold;
-    color: #b89646;
+    font-size: 35px;
+    color: #b08a3e;
+    text-align: center;
     margin-bottom: 15px;
 }
 
 .projeto-card h3 {
     font-family: Georgia, serif;
-    font-size: 22px;
-    color: #59472b;
-    margin-bottom: 10px;
+    color: #9b792f;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .projeto-card p {
-    color: #706959;
-    margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 13px;
+    color: #756d5c;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
-/* TECNOLOGIAS */
-
-.tecnologias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.tecnologias span {
-    background-color: #f5ecd4;
-    color: #8d6d2e;
-    border: 1px solid #e4d5af;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* LINKS DOS PROJETOS */
+/* LINKS DAS ATIVIDADES */
 
 .link-projeto {
+    display: block;
+    text-align: center;
+
+    margin-top: auto;
+    padding: 10px;
+
     color: #9b792f;
     text-decoration: none;
     font-weight: bold;
+
+    border-top: 1px solid #eadbb5;
+
     transition: 0.3s;
 }
 
 .link-projeto:hover {
-    color: #6e511d;
-    text-decoration: underline;
+    color: #d4af37;
 }
 
-/* SOBRE */
+/* =====================================
+   SOBRE
+===================================== */
 
 .secao-destaque {
     max-width: 100%;
-    background:
-        linear-gradient(
-            135deg,
-            #f4eedf,
-            #ffffff,
-            #f4eedf
-        );
+    background: linear-gradient(
+        135deg,
+        #f5ecd8,
+        #ffffff,
+        #f5ecd8
+    );
+
     border-top: 1px solid #e4d5af;
 }
 
-.secao-destaque > * {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .sobre-conteudo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 40px;
+    max-width: 700px;
+    margin: 35px auto 0;
+    text-align: center;
 }
 
-.foto {
-    width: 200px;
-    height: 200px;
-    min-width: 200px;
-
-    border-radius: 50%;
-    border: 3px solid #d4af37;
-
-    background:
-        radial-gradient(
-            circle,
-            #ffffff,
-            #f1e5c6
-        );
-
-    color: #9b792f;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    font-family: Georgia, serif;
-    font-size: 48px;
-    font-weight: bold;
-
-    box-shadow: 0 8px 25px rgba(150, 120, 50, 0.15);
-    animation: flutuar 5s ease-in-out infinite;
-}
-
-.foto span {
-    font-size: 32px;
-}
-
-.sobre-texto {
-    max-width: 550px;
-}
-
-.sobre-texto h3 {
+.sobre-conteudo h3 {
     font-family: Georgia, serif;
     font-size: 26px;
-    color: #8d6d2e;
+    color: #9b792f;
+    margin-bottom: 20px;
+}
+
+.sobre-conteudo p {
+    color: #756d5c;
+    line-height: 1.9;
     margin-bottom: 15px;
 }
 
-.sobre-texto p {
-    color: #706959;
-    margin-bottom: 15px;
-}
-
-/* RODAPÉ */
+/* =====================================
+   RODAPÉ
+===================================== */
 
 footer {
-    background-color: #332d21;
+    background: #332d21;
     color: #e8d5a2;
     text-align: center;
-    padding: 35px;
-}
-
-.simbolo-rodape {
-    font-size: 30px;
-    margin-bottom: 10px;
+    padding: 35px 20px;
 }
 
 footer small {
@@ -398,33 +613,17 @@ footer small {
     color: #d6c7a5;
 }
 
-/* ANIMAÇÕES */
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
 
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media (max-width: 1100px) {
+    .projetos-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@keyframes flutuar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     .navbar {
         flex-direction: column;
@@ -432,39 +631,35 @@ footer small {
     }
 
     .menu {
+        gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
-    }
-
-    .inicio {
-        min-height: 70vh;
     }
 
     .inicio h1 {
-        font-size: 42px;
+        font-size: 34px;
     }
 
-    .inicio h2 {
-        font-size: 23px;
-    }
-
-    .inicio::before,
-    .inicio::after {
-        display: none;
+    .foto-com-asas {
+        width: 600px;
+        margin-left: 50%;
+        transform: translateX(-50%) scale(0.55);
+        transform-origin: center;
+        margin-top: -20px;
+        margin-bottom: -45px;
+        animation: none;
     }
 
     .projetos-container {
         grid-template-columns: 1fr;
     }
 
-    .sobre-conteudo {
-        flex-direction: column;
-        text-align: center;
+    .secao {
+        padding: 60px 20px;
     }
 }
 
-/* REDUÇÃO DE ANIMAÇÕES */
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
     *,
