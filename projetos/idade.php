@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pão de Queijo</title>
+    <title>Verifique sua Idade</title>
     <link rel="stylesheet" href="../CSS/idade.css">
 </head>
 <body>
