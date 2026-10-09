@@ -144,9 +144,13 @@ function contarChamados(): array
     foreach ($chamados as $chamado) {
         if ($chamado['status'] === 'Aberto') {
             $relatorio['abertos']++;
-        } elseif ($chamado['status'] === 'Em andamento') {
+        }
+        
+         elseif ($chamado['status'] === 'Em andamento') {
             $relatorio['em_andamento']++;
-        } elseif ($chamado['status'] === 'Resolvido') {
+        }
+        
+        elseif ($chamado['status'] === 'Resolvido') {
             $relatorio['resolvidos']++;
         }
     }
