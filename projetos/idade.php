@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifique sua Idade</title>
+    <title>Pão de Queijo</title>
     <link rel="stylesheet" href="../CSS/idade.css">
 </head>
 <body>
 
 <div class="card">
     <?php
-    echo "<Verifique sua Idade </h1>";
+    echo "<h1> Pão de queijo </h1>";
 
     $nome = $_POST['nome'] ?? '';
     $idade = $_POST['idade'] ?? null;
