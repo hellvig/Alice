@@ -133,7 +133,6 @@ body > p {
     overflow-wrap: anywhere;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 600px) {
     body {
         padding: 15px;

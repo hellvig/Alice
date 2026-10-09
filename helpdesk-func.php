@@ -1,125 +1,155 @@
+
 <?php
 
-$caminho = __DIR__ . "/chamados.json";
+function lerChamados(): array
+{
+    $arquivo = __DIR__ . '/chamados.json';
 
-function consultarChamados() {
-    global $caminho;
-
-    // LER O ARQUIVO JSON
-    $json = file_get_contents($caminho);
-
-    // TRANSFORMAR JSON EM ARRAY PHP
-    $chamados = json_decode($json, true);
-
-    if (!is_array($chamados)) {
-        $chamados = [];
+    if (!file_exists($arquivo)) {
+        file_put_contents($arquivo, '[]');
     }
 
-    return $chamados;
+    $conteudo = file_get_contents($arquivo);
+    $chamados = json_decode($conteudo, true);
+
+    return is_array($chamados) ? $chamados : [];
 }
 
-function salvarChamados($chamados) {
-    global $caminho;
+function salvarChamados(array $chamados): bool
+{
+    $arquivo = __DIR__ . '/chamados.json';
 
-    // TRANSFORMAR ARRAY PHP EM JSON
-    $jsonAtualizado = json_encode(
+    $json = json_encode(
         $chamados,
         JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
     );
 
-    file_put_contents($caminho, $jsonAtualizado);
+    if ($json === false) {
+        return false;
+    }
+
+    return file_put_contents($arquivo, $json, LOCK_EX) !== false;
 }
 
-function cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade) {
+function cadastrarChamado(
+    string $nome,
+    string $setor,
+    string $equipamento,
+    string $descricao,
+    string $prioridade
+): bool {
+    $nome = trim($nome);
+    $descricao = trim($descricao);
 
-    $chamados = consultarChamados();
-
-    $novoChamado = [
-        "nome" => $nome,
-        "setor" => $setor,
-        "equipamento" => $equipamento,
-        "descricao" => $descricao,
-        "prioridade" => $prioridade,
-        "status" => "Aberto"
+    $setores = [
+        'Produção',
+        'Administrativo',
+        'Logística',
+        'Financeiro',
+        'TI'
     ];
 
-    $chamados[] = $novoChamado;
-
-    salvarChamados($chamados);
-}
-
-function atualizarChamado($posicao, $novoStatus) {
-
-    $chamados = consultarChamados();
-
-    $statusPermitidos = [
-        "Aberto",
-        "Em andamento",
-        "Resolvido"
+    $equipamentos = [
+        'Computador',
+        'Impressora',
+        'Rede',
+        'Sistema',
+        'Outro'
     ];
+
+    $prioridades = ['Baixa', 'Média', 'Alta'];
 
     if (
-        isset($chamados[$posicao]) &&
-        in_array($novoStatus, $statusPermitidos)
+        $nome === '' ||
+        $descricao === '' ||
+        !in_array($setor, $setores, true) ||
+        !in_array($equipamento, $equipamentos, true) ||
+        !in_array($prioridade, $prioridades, true)
     ) {
-        $chamados[$posicao]["status"] = $novoStatus;
-
-        salvarChamados($chamados);
-
-        return true;
+        return false;
     }
 
-    return false;
+    $chamados = lerChamados();
+
+    $chamados[] = [
+        'nome' => $nome,
+        'setor' => $setor,
+        'equipamento' => $equipamento,
+        'descricao' => $descricao,
+        'prioridade' => $prioridade,
+        'status' => 'Aberto'
+    ];
+
+    return salvarChamados($chamados);
 }
 
-function excluirChamado($posicao) {
+function listarChamados(): array
+{
+    return lerChamados();
+}
 
-    $chamados = consultarChamados();
+function atualizarChamado(int $id, string $status): bool
+{
+    $statusPermitidos = [
+        'Aberto',
+        'Em andamento',
+        'Resolvido'
+    ];
 
-    if (isset($chamados[$posicao])) {
-
-        unset($chamados[$posicao]);
-
-        $chamados = array_values($chamados);
-
-        salvarChamados($chamados);
-
-        return true;
+    if (!in_array($status, $statusPermitidos, true) || $id < 0) {
+        return false;
     }
 
-    return false;
+    $chamados = lerChamados();
+
+    if (!isset($chamados[$id])) {
+        return false;
+    }
+
+    $chamados[$id]['status'] = $status;
+
+    return salvarChamados($chamados);
 }
 
-function gerarRelatorio() {
+function excluirChamado(int $id): bool
+{
+    if ($id < 0) {
+        return false;
+    }
 
-    $chamados = consultarChamados();
+    $chamados = lerChamados();
 
-    $total = count($chamados);
-    $abertos = 0;
-    $andamento = 0;
-    $resolvidos = 0;
+    if (!isset($chamados[$id])) {
+        return false;
+    }
+
+    unset($chamados[$id]);
+
+    $chamados = array_values($chamados);
+
+    return salvarChamados($chamados);
+}
+
+function contarChamados(): array
+{
+    $chamados = lerChamados();
+
+    $relatorio = [
+        'total' => count($chamados),
+        'abertos' => 0,
+        'em_andamento' => 0,
+        'resolvidos' => 0
+    ];
 
     foreach ($chamados as $chamado) {
-
-        if ($chamado["status"] == "Aberto") {
-            $abertos++;
-        }
-
-        if ($chamado["status"] == "Em andamento") {
-            $andamento++;
-        }
-
-        if ($chamado["status"] == "Resolvido") {
-            $resolvidos++;
+        if ($chamado['status'] === 'Aberto') {
+            $relatorio['abertos']++;
+        } elseif ($chamado['status'] === 'Em andamento') {
+            $relatorio['em_andamento']++;
+        } elseif ($chamado['status'] === 'Resolvido') {
+            $relatorio['resolvidos']++;
         }
     }
 
-    return [
-        "total" => $total,
-        "abertos" => $abertos,
-        "andamento" => $andamento,
-        "resolvidos" => $resolvidos
-    ];
+    return $relatorio;
 }
-
-?>
