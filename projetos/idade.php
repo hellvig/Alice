@@ -10,7 +10,7 @@
 
 <div class="card">
     <?php
-    echo "<h1> Pão de queijo </h1>";
+    echo "<h1> Verifique sua idade </h1>";
 
     $nome = $_POST['nome'] ?? '';
     $idade = $_POST['idade'] ?? null;
