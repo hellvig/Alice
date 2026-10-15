@@ -51,8 +51,8 @@
     }
 
     //UPDATE - Atualizar status do chamado
-    function atualizarChamado($posicao, $novostatus) {
-        $chamados = lerChamado();
+    function atualizarChamado($posicao, $novoStatus) {
+        $chamados = lerChamados();
 
         //Listar status permitidos para o chamado
         $statusPermitidos = [
@@ -75,15 +75,18 @@
         // - $statusPermitidos: lista de valores aceitos.
         // - true: exige comparação estrita.
         // O ! significa que a condição será verdadeira quando o valor não estiver na lista.
-        if (!in_array($novoStatus, $statusPermitidos)){
+        if (!in_array($novoStatus, $statusPermitidos, true)){
             return false;
         
 
-        $chamados[$posicao]["status"] = $novoStatus;
+        $chamados[$posicao]["status"] = "Resolvido";
 
-        return salvarChamados($chamados); {
+        return salvarChamados($chamados); 
+        }
 
     }
+
+
 
     //DELETE - Excluir chamados
     function excluirChamados($posicao) {
@@ -116,11 +119,11 @@
         ];
 
         foreach ($chamados as $chamados) {
-            if ($chamado["status"] === "Aberto") {
+            if ($chamados["status"] == "Aberto"){
                 $relatorio["abertos"]++;
-            } elseif ($chamado["status"] === "Em andamento") {
+            } elseif ($chamados["status"] == "Em andamento") {
                 $relatorio["andamento"]++;
-            } elseif ($chamado["status"] === "Resolvido") {
+            } elseif ($chamados["status"] == "Resolvido") {
                 $relatorio["resolvidos"]++;
             }
         }
