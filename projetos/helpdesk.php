@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_POST["prioridade"] ?? ""
         );
 
-        $mensagem = $suceeso ? "Chamado cadastrado com sucesso!" : "Erro ao cadastrar. Verifique os dados.";
+        $mensagem = $sucesso ? "Chamado cadastrado com sucesso!" : "Erro ao cadastrar. Verifique os dados.";
     }
 
     if ($sacao === "atualizar") {
@@ -46,6 +46,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if ($acao === "excluir") {
-        
+        $sucesso = excluirChamados((int) ($_POST["posicao"] ?? -1));
+
+        $mensagem = $sucesso ? "Chamado excluido!" : "Não foi possível excluir.";
     }
 }
+
+$chamados = lerChamados();
+$relatorio = gerarRelatorio();
+
+// Evite exibir HTML enviado pelo usuário
+function escapar($valor) {
+    return htmlspecialchars((string) $valor, ENT_QUOTES, "UTF-8");
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
