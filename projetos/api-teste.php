@@ -25,7 +25,10 @@
         // Define o código de status HTTP dessa requisição
         http_response_code(200);
 
-        // Por que não preciso utilizar JSON_PRETTY_PRINT
+        // Por que não preciso utilizar JSON_PRETTY_PRINT?
+        // Porque JSON_PRETTY_PRINT serve apenas para formatar o JSON,
+        // deixando-o mais legível para humanos. Sem ele, o JSON continua
+        // válido e pode ser interpretado normalmente pela aplicação cliente.
         echo json_encode($chamados, JSON_UNESCAPED_UNICODE);
 
         exit;
@@ -39,7 +42,7 @@
         $conteudo = file_get_contents('php://input');
 
         // Converte JSON em ARRAY PHP
-        $dados = json_decode();
+        $dados = json_decode($conteudo, true);
 
         // Verifica se os dados são válidos
             if (
@@ -64,6 +67,16 @@
 
         exit;
     }
+
+    header('allow: GET, POST');
+    http_response_code(405);
+
+    // COMANDOS NA VPS PARA TESTAR:
+    // curl -i -X GET https://look.devlook.xyz/projetos/api/api-teste.php
+    // curl -i -X POST https://look.devlook.xyz/projetos/api/api-teste.php \ -H 
+    // "Content-Type: application/json" \ -d '{"titulo":"Impressora com defeito"}'
+    // curl -i -X POST https://look.devlook.xyz/projetos/api/api-teste.php \ -H 
+    // "Content-Type: application/json" \ -d
 
 
 ?>
