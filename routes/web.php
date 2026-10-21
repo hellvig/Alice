@@ -8,7 +8,6 @@
         'GET' => [
             'portfolio' => [new PortfolioController(), 'index'],
             'helpdesk' => [new HelpdeskController(), 'index'],
-            'jogos' => [],
             //outras atividades...
         ],
         'POST' => [
