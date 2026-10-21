@@ -1,6 +1,6 @@
 <?php
 
-class HelpdesckController
+class HelpdeskController
 {
     public function index() {
         
