@@ -23,17 +23,23 @@ atacar($nome);
 // Exemplo COM POO
 class Personagem {
     public $nome;
-    public $vida = 100;
-    public $dano = 10;
+    public $vida;
+    public $dano;
 
+    public function __construct($nome, $vida, $dano) {
+        $this->nome = $nome;
+        $this->vida = $vida;
+        $this->dano = $dano;
+    }
+        
     public function atacar() {
         echo "$this->nome realizou um ataque!";
     }
 }
 
-$personagem1 = new Personagem();
-$personagem1->nome = "Alice";
-$personagem1->atacar();
+$alice = new Personagem("Alice", 100, 10);
+$kler = new Personagem("kler", 160, 15);
+$velma = new Personagem("kler", 50, 99);
 
 
 ?>
