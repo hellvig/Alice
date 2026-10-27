@@ -1,26 +1,17 @@
 <?php
 
-// Exemplo SEM POO
-$nome = "Alice";
-$vida = 100;
-$dano - 10;
+// ENCAPSULAMENTO
+//Proteger informações para que não sejam alteradas de qualquer jeito.
 
-$nome = "kler";
-$vida = 160;
-$dano - 15;
+//HERANÇA
+//Criar uma classe nova aproveitando características de outra.
 
-$nome = "velma";
-$vida = 50;
-$dano - 99;
+//POLIMORFISMO
+//Permitir que objetos diferentes respondam à mesma ação de maneiras diferentes.
 
-function atacar($nome) {
-    echo "$nome realizou um ataque!";
-}
+//ABSTRAÇÃO
+//Mostrar o que é necessário e esconder detalhes complicados de funcionamento.
 
-atacar($nome);
-
-
-// Exemplo COM POO
 class Personagem {
     public $nome;
     public $vida;
@@ -39,7 +30,30 @@ class Personagem {
 
 $alice = new Personagem("Alice", 100, 10);
 $kler = new Personagem("kler", 160, 15);
-$velma = new Personagem("kler", 50, 99);
+$ana = new Personagem("Ana", 50, 99);
 
+$alice->atacar(); // método herdado
 
+class Guerreiro extends Personagem {
+    public function defender() {
+        echo "$this->nome levantou o escudo!";
+    }
+}
+
+$guerreiro = new Guerreiro("Alice", 100, 10);
+
+$guerreiro->atacar(); //método herdado
+$guerreiro->defender(); //método próprio
+
+//1. O que é uma classe?
+//Um molde para criar objetos
+
+//2. O que significa new Personagem()?
+//Criar um objeto da classe Personagem
+
+//3. Para que serve $this->nome?
+//Acessar o nome do objeto atual
+
+//4. O que significa extends?
+//Herdar características e métodos de outra classe
 ?>
