@@ -14,13 +14,29 @@
 
 class Personagem {
     public $nome;
-    public $vida;
+    private $vida;
     public $dano;
 
     public function __construct($nome, $vida, $dano) {
         $this->nome = $nome;
         $this->vida = $vida;
         $this->dano = $dano;
+    }
+
+    //GETTER
+    public function getVida() {
+        return $this->vida;
+    }
+
+    //SETTER
+    public function setVida($vida) {
+        if ($vida < 0) {
+            $this->vida = 0;
+            echo "A vida não pode ser negativa!\n";
+            return;
+        }
+
+        $this->vida = $vida;
     }
         
     public function atacar() {
@@ -29,6 +45,9 @@ class Personagem {
 }
 
 $alice = new Personagem("Alice", 100, 10);
+
+$alice->setvida(50);
+
 $kler = new Personagem("kler", 160, 15);
 $ana = new Personagem("Ana", 50, 99);
 
