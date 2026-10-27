@@ -63,7 +63,13 @@ class Mago extends Personagem {
 
 $guerreiro = new Guerreiro("Alice", 100, 10);
 $mago = new Mago("Ana", 50, 99);
-$personagem = new Personagem("kler", 160, 15)
+$personagem = new Personagem("kler", 160, 15);
+
+$personagens = [$guerreiro, $mago, $personagem];
+
+foreach($personagens as $p) {
+    $p->atacar();
+}
 
 //1. O que é uma classe?
 //Um molde para criar objetos
