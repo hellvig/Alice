@@ -12,7 +12,7 @@
 //ABSTRAÇÃO
 //Mostrar o que é necessário e esconder detalhes complicados de funcionamento.
 
-class Personagem {
+abstract class Personagem {
     public $nome;
     private $vida;
     public $dano;
@@ -37,10 +37,9 @@ class Personagem {
         }
         $this->vida = $vida;
     }
-        
-    public function atacar() {
-        echo "$this->nome realizou um ataque!";
-    }
+    
+    //Toda classe filha deverá implementar atacar()
+    abstract public function atacar();
 }
 
 class Guerreiro extends Personagem {
@@ -52,12 +51,26 @@ class Guerreiro extends Personagem {
     public function defender() {
         echo "$this->nome levantou o escudo!";
     }
+
 }
 
 class Mago extends Personagem {
         // Sobreescrevendo o método de classe pai
     public function atacar() {
         echo "$this->nome lançou uma bola de fogo!\n";
+    }
+}
+
+class Curandeiro extends Personagem {
+    
+    public function atacar() {
+        echo "$this->nome atacou com uma faca!\n";
+    }
+
+    public function curar(Personagem $alvo, int $quantidade) {
+        $novaVida = $alvo->getVida() + $quantidade;
+        $alvo->setVida($novaVida);
+        echo "this->nome curou {$alvo->nome} em $quantidade HP!\n";
     }
 }
 
@@ -70,6 +83,8 @@ $personagens = [$guerreiro, $mago, $personagem];
 foreach($personagens as $p) {
     $p->atacar();
 }
+
+$curandeiro->curar($guerreiro, 50);
 
 //1. O que é uma classe?
 //Um molde para criar objetos
