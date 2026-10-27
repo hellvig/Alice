@@ -35,7 +35,6 @@ class Personagem {
             echo "A vida não pode ser negativa!\n";
             return;
         }
-
         $this->vida = $vida;
     }
         
@@ -44,25 +43,27 @@ class Personagem {
     }
 }
 
-$alice = new Personagem("Alice", 100, 10);
-
-$alice->setvida(50);
-
-$kler = new Personagem("kler", 160, 15);
-$ana = new Personagem("Ana", 50, 99);
-
-$alice->atacar(); // método herdado
-
 class Guerreiro extends Personagem {
+        //Sobreescrevendo o método da classe pai
+    public function atacar() {
+        echo "$this->nome Atacou com uma espada!\n";
+    }
+
     public function defender() {
         echo "$this->nome levantou o escudo!";
     }
 }
 
-$guerreiro = new Guerreiro("Alice", 100, 10);
+class Mago extends Personagem {
+        // Sobreescrevendo o método de classe pai
+    public function atacar() {
+        echo "$this->nome lançou uma bola de fogo!\n";
+    }
+}
 
-$guerreiro->atacar(); //método herdado
-$guerreiro->defender(); //método próprio
+$guerreiro = new Guerreiro("Alice", 100, 10);
+$mago = new Mago("Ana", 50, 99);
+$personagem = new Personagem("kler", 160, 15)
 
 //1. O que é uma classe?
 //Um molde para criar objetos
