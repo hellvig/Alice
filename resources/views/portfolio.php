@@ -1,4 +1,3 @@
- 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,10 +13,8 @@
 <body>
 
     <!-- MENU PRINCIPAL -->
-
     <header>
         <nav class="navbar">
-
             <h2 class="logo">Pão de Queijo</h2>
 
             <ul class="menu">
@@ -25,14 +22,11 @@
                 <li><a href="#atividades">Atividades</a></li>
                 <li><a href="#sobre">Sobre</a></li>
             </ul>
-
         </nav>
     </header>
 
     <!-- INÍCIO -->
-
     <section class="inicio" id="inicio">
-
         <div class="inicio-conteudo">
 
             <p class="saudacao">DESENVOLVIMENTO WEB</p>
@@ -45,10 +39,7 @@
             </p>
 
             <!-- CÍRCULO PHP COM ASAS -->
-
             <div class="foto-com-asas">
-
-                <!-- ASA ESQUERDA -->
 
                 <div class="asa asa-esquerda">
                     <div class="pena pena1"></div>
@@ -61,13 +52,9 @@
                     <div class="pena pena8"></div>
                 </div>
 
-                <!-- CÍRCULO CENTRAL -->
-
                 <div class="foto">
                     <span>PHP</span>
                 </div>
-
-                <!-- ASA DIREITA -->
 
                 <div class="asa asa-direita">
                     <div class="pena pena1"></div>
@@ -87,11 +74,9 @@
             </a>
 
         </div>
-
     </section>
 
     <!-- ATIVIDADES -->
-
     <section class="secao" id="atividades">
 
         <p class="detalhe-secao">MEUS PROJETOS</p>
@@ -105,9 +90,7 @@
         <div class="projetos-container">
 
             <!-- IDADE -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">01</div>
 
                 <h3>Verificador de Idade</h3>
@@ -117,16 +100,13 @@
                     e verificar a situação do usuário.
                 </p>
 
-                <a href="/resources/views/projetos/idade.php" class="link-projeto">
+                <a href="/?rota=idade" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- NOTAS -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">02</div>
 
                 <h3>Verificador de Notas</h3>
@@ -136,16 +116,13 @@
                     e verificar a situação do aluno.
                 </p>
 
-                <a href="/resources/views/projetos/notas.php" class="link-projeto">
+                <a href="/?rota=notas" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- DESAFIO -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">03</div>
 
                 <h3>Desafio de Notas</h3>
@@ -155,16 +132,13 @@
                     cinco notas com pesos diferentes.
                 </p>
 
-                <a href="/resources/views/projetos/notas-desafio.php" class="link-projeto">
+                <a href="/?rota=notas-desafio" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- LOGIN -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">04</div>
 
                 <h3>Login Básico</h3>
@@ -174,16 +148,13 @@
                     desenvolvido com HTML e PHP.
                 </p>
 
-                <a href="/resources/views/projetos/login-basico.php" class="link-projeto">
+                <a href="/?rota=login-basico" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- JOGOS -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">05</div>
 
                 <h3>Cadastro de Jogos</h3>
@@ -193,16 +164,13 @@
                     PHP e banco de dados.
                 </p>
 
-                <a href="/resources/views/projetos/jogos.php" class="link-projeto">
+                <a href="/?rota=jogos" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- POO -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">06</div>
 
                 <h3>Programação Orientada a Objetos</h3>
@@ -215,13 +183,10 @@
                 <a href="/?rota=poo" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
             <!-- POO2 -->
-
             <div class="projeto-card">
-
                 <div class="projeto-numero">07</div>
 
                 <h3>Controle de Produção</h3>
@@ -234,15 +199,12 @@
                 <a href="/?rota=poo2" class="link-projeto">
                     Abrir atividade →
                 </a>
-
             </div>
 
         </div>
-
     </section>
 
     <!-- SOBRE -->
-
     <section class="secao secao-destaque" id="sobre">
 
         <p class="detalhe-secao">CONHECIMENTO</p>
@@ -265,17 +227,12 @@
             </p>
 
         </div>
-
     </section>
 
     <!-- RODAPÉ -->
-
     <footer>
-
         <p>Atividades PHP - Desenvolvimento Web</p>
-
         <small>Hellvig - Portfólio de Projetos</small>
-
     </footer>
 
 </body>
