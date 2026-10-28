@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pão de Queijo</title>
-    <link rel="stylesheet" href="../CSS/idade.css">
+    <link rel="stylesheet" href="../../css/idade.css">
 </head>
 <body>
 
@@ -14,38 +14,42 @@
 
     $nome = $_POST['nome'] ?? '';
     $idade = $_POST['idade'] ?? null;
-    
-    
-    $resultado = ($nome !== '' && $idade !== null) ? "{$nome} - {$idade} anos" : '';
+
+    $resultado = ($nome !== '' && $idade !== null)
+        ? "{$nome} - {$idade} anos"
+        : '';
     ?>
 
     <form method="POST" action="">
         <div>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" value="<?= htmlspecialchars($nome) ?>" required>
+            <input type="text" id="nome" name="nome"
+                value="<?= htmlspecialchars($nome) ?>" required>
         </div>
-        
+
         <div>
             <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" value="<?= htmlspecialchars($idade ?? '') ?>" required>
+            <input type="number" id="idade" name="idade"
+                value="<?= htmlspecialchars($idade ?? '') ?>" required>
         </div>
 
         <div>
             <label for="resultado">Resultado:</label>
-            <input type="text" id="resultado" name="resultado" value="<?= htmlspecialchars($resultado) ?>" readonly>
+            <input type="text" id="resultado" name="resultado"
+                value="<?= htmlspecialchars($resultado) ?>" readonly>
         </div>
 
         <button type="submit">Enviar</button>
     </form>
 
     <hr>
-    
+
     <?php if ($nome !== '' && $idade !== null): ?>
         <h1>Nome: <?= ucfirst(htmlspecialchars($nome)) ?></h1>
         <p>Idade: <?= (int)$idade ?></p>
 
         <p>
-            Status: 
+            Status:
             <?php if ((int)$idade >= 18): ?>
                 <strong style="color: green;">Maior de idade</strong>
             <?php else: ?>
@@ -53,7 +57,6 @@
             <?php endif; ?>
         </p>
     <?php endif; ?>
-    
 </div>
 
 </body>

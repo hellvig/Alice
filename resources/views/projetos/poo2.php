@@ -1,23 +1,20 @@
 <?php
-// SISTEMA DE CONTROLE DE PRODUÇÃO INDUSTRIAL
+session_start();
 
-// 1. CLASSE ABSTRATA
+// Classe principal das máquinas
 abstract class Maquina {
     public $nome;
     private $producao;
 
-    public function __construct($nome)
-    {
+    public function __construct($nome) {
         $this->nome = $nome;
         $this->producao = 0;
     }
 
-    //ENCAPSULAMENTO - GETTER
     public function getProducao() {
         return $this->producao;
     }
 
-    //ENCAPSULAMENTO - ALTERAÇÃO CONTROLADA
     public function registrarProducao($quantidade) {
         if ($quantidade <= 0) {
             return false;
@@ -27,76 +24,65 @@ abstract class Maquina {
         return true;
     }
 
-    //ABSTRAÇÃO
     abstract public function operar();
 }
 
-// 2. HERANÇA
+// Tipos de máquinas (herança)
 class Esteira extends Maquina {
     public function operar() {
-        return "Transportando peças...";
+        return "Transportando peças";
     }
 }
 
 class Prensa extends Maquina {
     public function operar() {
-        return "Prensando peças...";
+        return "Prensando peças";
     }
 }
 
 class RoboSoldagem extends Maquina {
     public function operar() {
-        return "Soldando peças...";
+        return "Soldando peças";
     }
 }
 
-// 3. SESSÃO = ARMAZENAMENTO TEMPORÁRIO
-
+// Lista de máquinas guardada durante a sessão
 if (!isset($_SESSION["maquinas"])) {
     $_SESSION["maquinas"] = [];
 }
 
 $mensagem = "";
 
-//4. RECEBER FORMULÁRIO VIA POST
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"] ?? "";
+    $nome = trim($_POST["nome"] ?? "");
     $tipo = $_POST["tipo"] ?? "";
-    $quantidade = $_POST["quantidade"] ?? null;
+    $quantidade = filter_input(INPUT_POST, "quantidade", FILTER_VALIDATE_INT);
 
-    if(
-        $nome === "" ||
-        $quantidade === false ||
-        $quantidade <=0
-    ) {
-        $mensagem = "Preencha os campos corretamente!";
+    if ($nome === "" || $quantidade === false || $quantidade === null || $quantidade <= 0) {
+        $mensagem = "Preencha todos os campos e informe uma quantidade maior que zero.";
     } else {
-        //CRIANDO OBJETOS COM BASE NO FORMULÁRIO
         if ($tipo === "esteira") {
             $maquina = new Esteira($nome);
         } elseif ($tipo === "prensa") {
-            $maquina = new prensa($nome);
+            $maquina = new Prensa($nome);
         } elseif ($tipo === "robosoldagem") {
             $maquina = new RoboSoldagem($nome);
+        } else {
+            $maquina = null;
         }
 
-        //EXECUTANDO OS MÉTODOS DO OBJETO
-        $maquina->registrarProducao($quantidade);
-
-        // GUARDANDO O OBJETO NA SESSÃO
-        $_SESSION["maquinas"][] = $maquina;
-
-        $mensagem = "Máquina cadastrada com sucesso!";
+        if ($maquina === null) {
+            $mensagem = "Selecione um tipo de máquina válido.";
+        } else {
+            $maquina->registrarProducao($quantidade);
+            $_SESSION["maquinas"][] = $maquina;
+            $mensagem = "Máquina cadastrada com sucesso!";
+        }
     }
 }
 
-//Evitar interpretar textos como HTML
 function escapar($texto) {
-    return htmlspecialchars(
-        (string) $texto,
-        ENT_QUOTES,
-        "UTF-8");
+    return htmlspecialchars((string) $texto, ENT_QUOTES, "UTF-8");
 }
 ?>
 <!DOCTYPE html>
