@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // Classe principal das máquinas
 abstract class Maquina {
