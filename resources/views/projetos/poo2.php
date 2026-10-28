@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $maquina = new Esteira($nome);
         } elseif ($tipo === "prensa") {
             $maquina = new prensa($nome);
-        } elseif ($tipo === "robo soldagem") {
+        } elseif ($tipo === "robosoldagem") {
             $maquina = new RoboSoldagem($nome);
         }
 
@@ -89,24 +89,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $mensagem = "Máquina cadastrada com sucesso!";
     }
-
-
-
-
-
-
-
-
-
-
-
 }
 
-
-
-
-
-
-
-
+//Evitar interpretar textos como HTML
+function escapar($texto) {
+    return htmlspecialchars(
+        (string) $texto,
+        ENT_QUOTES,
+        "UTF-8");
+}
 ?>
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
