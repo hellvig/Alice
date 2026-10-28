@@ -12,7 +12,7 @@
     <h1>Calculadora de Média</h1>
     <p>Preencha os dados abaixo para verificar o resultado do aluno.</p>
 
-    <form action="notas-desafio.php" method="GET">
+    <form action="/?rota=notas-desafio" method="GET">
         <div>
             <label for="aluno">Aluno:</label>
             <input type="text" id="aluno" name="aluno"

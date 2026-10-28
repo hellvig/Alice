@@ -7,7 +7,6 @@ return [
     'GET' => [
         'portfolio' => [new PortfolioController(), 'index'],
         'helpdesk' => [new HelpdeskController(), 'index'],
-
         'idade' => [new PortfolioController(), 'idade'],
         'notas' => [new PortfolioController(), 'notas'],
         'notas-desafio' => [new PortfolioController(), 'notasDesafio'],
