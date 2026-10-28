@@ -105,8 +105,32 @@ function escapar($texto) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../css/poo2.css">
 </head>
 <body>
-    
+    <header class="topo">
+        <a href="/index.php" class="voltar">← Voltar ao portfólio</a>
+        <span>Programação Orientada a Objetos</span>
+    </header>
+
+    <main class="pagina">
+        <section class="introducao">
+            <p class="etiqueta">ATIVIDADE DE PHP</p>
+            <h1>Controle de Produção Industrial</h1>
+            <p>Cadastre máquinas e registre a quantidade de peças produzidas.</p>
+        </section>
+
+        <section class="cartao">
+            <h2>Cadastrar máquina</h2>
+
+            <?php if ($mensagem !== ""): ?>
+                <p class="mensagem"><?= escapar($mensagem) ?></p>
+            <?php endif; ?>
+
+            <form method="POST" action="">
+                <div class="campo">
+                    <label for="nome">Nome da máquina</label>
+                    <input type="text" id="nome" name="nome" maxlength="80" required>
+                </div>
 </body>
 </html>
