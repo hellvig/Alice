@@ -65,6 +65,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $tipo = $_POST["tipo"] ?? "";
     $quantidade = $_POST["quantidade"] ?? null;
 
+    if(
+        $nome === "" ||
+        $quantidade === false ||
+        $quantidade <=0
+    ) {
+        $mensagem = "Preencha os campos corretamente!";
+    } else {
+        //CRIANDO OBJETOS COM BASE NO FORMULÁRIO
+        if ($tipo === "esteira") {
+            $maquina = new Esteira($nome);
+        } elseif ($tipo === "prensa") {
+            $maquina = new prensa($nome);
+        } elseif ($tipo === "robo soldagem") {
+            $maquina = new RoboSoldagem($nome);
+        }
+
+        //EXECUTANDO OS MÉTODOS DO OBJETO
+        $maquina->registrarProducao($quantidade);
+
+        // GUARDANDO O OBJETO NA SESSÃO
+        $_SESSION["maquinas"][] = $maquina;
+
+        $mensagem = "Máquina cadastrada com sucesso!";
+    }
 
 
 
@@ -76,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-    
 }
 
 
