@@ -100,11 +100,11 @@ function escapar($texto) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Controle de Produção Industrial</title>
     <link rel="stylesheet" href="../../css/poo2.css">
 </head>
 <body>
@@ -132,5 +132,22 @@ function escapar($texto) {
                     <label for="nome">Nome da máquina</label>
                     <input type="text" id="nome" name="nome" maxlength="80" required>
                 </div>
-</body>
-</html>
+
+                <div class="campo">
+                    <label for="tipo">Tipo de máquina</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="esteira">Esteira</option>
+                        <option value="prensa">Prensa</option>
+                        <option value="robosoldagem">Robô de soldagem</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="quantidade">Quantidade de peças produzidas</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" step="1" required>
+                </div>
+
+                <button type="submit">Cadastrar máquina</button>
+            </form>
+        </section>
