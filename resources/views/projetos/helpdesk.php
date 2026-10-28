@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $descricao = $_POST["descricao"] ?? "";
         $prioridade = $_POST["prioridade"] ?? "";
         
-        cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade);
+        $modeloChamado-> cadastrarChamado($nome, $setor, $equipamento, $descricao, $prioridade);
         }
         
             
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $novoStatus = $_POST["status"] ?? "";
                
                 if ($posicao !== null) {
-                    atualizarChamado($posicao, $novoStatus);
+                    $modeloChamado-> atualizarChamado($posicao, $novoStatus);
                        }           
                     }                     
                     
@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $posicao = $_POST["posicao"] ?? null;
                         
                         if ($posicao !== null) {
-                            excluirChamado($posicao);
+                            $modeloChamado-> excluirChamado($posicao);
                         }
                      }   
 }
-$chamados = listarChamados();
-$relatorio = gerarRelatorio($chamados);
+$chamados = $modeloChamado-> listarChamados();
+$relatorio = $modeloChamado-> gerarRelatorio($chamados);
 
 ?>
 <!DOCTYPE html>
