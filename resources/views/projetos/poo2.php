@@ -151,3 +151,35 @@ function escapar($texto) {
                 <button type="submit">Cadastrar máquina</button>
             </form>
         </section>
+
+        <section class="cartao">
+            <h2>Máquinas cadastradas</h2>
+
+            <?php if (empty($_SESSION["maquinas"])): ?>
+                <p class="vazio">Nenhuma máquina cadastrada ainda.</p>
+            <?php else: ?>
+                <div class="tabela-responsiva">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Máquina</th>
+                                <th>Operação</th>
+                                <th>Peças produzidas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($_SESSION["maquinas"] as $maquina): ?>
+                                <tr>
+                                    <td><?= escapar($maquina->nome) ?></td>
+                                    <td><?= escapar($maquina->operar()) ?></td>
+                                    <td><?= escapar($maquina->getProducao()) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </section>
+    </main>
+</body>
+</html>
