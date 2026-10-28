@@ -117,7 +117,7 @@
                     e verificar a situação do usuário.
                 </p>
 
-                <a href="/resources/views/projetos/idade.php" class="link-projeto">
+                <a href="/?rota=idade" class="link-projeto">
                     Abrir atividade →
                 </a>
 
@@ -136,7 +136,7 @@
                     e verificar a situação do aluno.
                 </p>
 
-                <a href="/resources/views/projetos/notas.php" class="link-projeto">
+                <a href="/?rota=notas" class="link-projeto">
                     Abrir atividade →
                 </a>
 
@@ -155,7 +155,7 @@
                     cinco notas com pesos diferentes.
                 </p>
 
-                <a href="/resources/views/projetos/notas-desafio.php" class="link-projeto">
+                <a href="/?rota=notas-desafio" class="link-projeto">
                     Abrir atividade →
                 </a>
 
@@ -174,7 +174,7 @@
                     desenvolvido com HTML e PHP.
                 </p>
 
-                <a href="/resources/views/projetos/login-basico.php" class="link-projeto">
+                <a href="/?rota=login-basico" class="link-projeto">
                     Abrir atividade →
                 </a>
 
@@ -193,7 +193,7 @@
                     PHP e banco de dados.
                 </p>
 
-                <a href="/resources/views/projetos/jogos.php" class="link-projeto">
+                <a href="/?rota=jogos" class="link-projeto">
                     Abrir atividade →
                 </a>
 
