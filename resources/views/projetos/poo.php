@@ -13,6 +13,7 @@
 //Mostrar o que é necessário e esconder detalhes complicados de funcionamento.
 
 abstract class Personagem {
+
     public $nome;
     private $vida;
     public $dano;
@@ -43,7 +44,7 @@ abstract class Personagem {
 }
 
 class Guerreiro extends Personagem {
-        //Sobreescrevendo o método da classe pai
+    //Sobreescrevendo o método da classe pai
     public function atacar() {
         echo "$this->nome Atacou com uma espada!\n";
     }
