@@ -1,0 +1,175 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf7ef;
+    color: #55401e;
+    line-height: 1.6;
+}
+
+.topo {
+    background: #fffaf0;
+    border-bottom: 2px solid #d4af37;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.topo span {
+    color: #9b792f;
+    font-weight: bold;
+}
+
+.voltar {
+    color: #9b792f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+.pagina {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto 60px;
+}
+
+.introducao {
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.etiqueta {
+    color: #b08a3e;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-family: Georgia, serif;
+    color: #9b792f;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 8px 0 12px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cartao {
+    background: #fffefa;
+    border: 1px solid #e5d5aa;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 22px rgba(100, 75, 25, 0.08);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c99e;
+    border-radius: 7px;
+    background: white;
+    font-size: 15px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #d4af37;
+    border-color: #9b792f;
+}
+
+button {
+    background: #9b792f;
+    color: white;
+    border: 0;
+    border-radius: 7px;
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #785b20;
+}
+
+.mensagem {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background: #f7efd9;
+    border: 1px solid #e5d5aa;
+}
+
+.vazio {
+    color: #756d5c;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #eadfbe;
+}
+
+th {
+    color: #785b20;
+    background: #fff8e7;
+}
+
+@media (max-width: 600px) {
+    .topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pagina {
+        width: 92%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .cartao {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
